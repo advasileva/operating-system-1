@@ -8,8 +8,8 @@ compile:
 	./scripts/compile.sh ${points}
 
 run:
+	make clear
 	./scripts/run.sh ${points} ${tests}
-	make chmod
 
 clear:
 	./scripts/clear.sh ${points} ${tests}

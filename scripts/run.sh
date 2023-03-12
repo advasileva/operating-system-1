@@ -12,4 +12,4 @@ do
     done
     echo
 done
-echo "Programs run"
+echo "Programs finished"

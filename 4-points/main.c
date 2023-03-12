@@ -6,53 +6,67 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-int input_size = 2048;
+int input_size = 5000;
 int output_size = 3;
 
-int read_string() {
-    return 0;
+void first_read(int fd[2], char* file) {
+    printf("First PID: %d\n", getpid());
+
+    char buffer[input_size];
+    int input = open(file, O_RDONLY);
+    int num = read(input, buffer, input_size);
+
+    write(fd[1], buffer, num);
 }
 
-int process(int fd[2], char* buffer, int num) {
+void second_process(int fd1[2], int fd2[2], int num) {
+    printf("Second PID: %d\n", getpid());
+
+    char buffer[num];
+    read(fd1[0], buffer, num);
+
     char min = buffer[0], max = buffer[0];
     for (size_t i = 1; i < num; i++)
     {
-        if (min > buffer[i])
-        {
+        if (min > buffer[i]) {
             min = buffer[i];
         }
-        if (max < buffer[i])
-        {
+        if (max < buffer[i]) {
             max = buffer[i];
         }
     }
 
-    char buffer2[output_size];
-    buffer2[0] = min;
-    buffer2[1] = '\n';
-    buffer2[2] = max;
-    write(fd[1], buffer2, output_size);
-    return 0;
+    buffer[0] = min;
+    buffer[1] = '\n';
+    buffer[2] = max;
+    write(fd2[1], buffer, output_size);
 }
 
-int write_result(int fd[2], char* file) {
-    char buffer2[output_size];
-    read(fd[0], buffer2, output_size);
+void third_write(int fd[2], char* file) {
+    printf("Third PID: %d\n", getpid());
+
+    char buffer[output_size];
+    read(fd[0], buffer, output_size);
 
     int output = open(file, O_WRONLY | O_CREAT);
-    write(output, buffer2, 3);
-    return 0;
+    write(output, buffer, output_size);
 }
 
 int main(int argc, char **argv) {
-    int fd[2];
-    int size = 2048;
-    char buffer[size], buffer2[3];
-    int input = open(argv[1], O_RDONLY);
-    int num = read(input, buffer, size);
-
-    pipe(fd);
-    process(fd, buffer, num);
-    write_result(fd, argv[2]);
+    int input[2], output[2];
+    pipe(input);
+    pipe(output);
+    
+    int id = fork();
+    if(id == 0) {
+        first_read(input, argv[1]);
+    } else {
+        id = fork();
+        if(id == 0) {
+            second_process(input, output, input_size);
+        } else {
+            third_write(output, argv[2]);
+        }
+    }
     return 0;
 }
