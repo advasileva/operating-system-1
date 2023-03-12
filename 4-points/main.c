@@ -16,11 +16,19 @@ void first_read(int fd[2], char* file) {
     int input = open(file, O_RDONLY);
     int num = read(input, buffer, input_size);
 
+    char size[10];
+    sprintf(size, "%d", num);
+    write(fd[1], size, 10);
     write(fd[1], buffer, num);
 }
 
-void second_process(int fd1[2], int fd2[2], int num) {
+void second_process(int fd1[2], int fd2[2]) {
     printf("Second PID: %d\n", getpid());
+
+    char size[10];
+    read(fd1[0], size, 10);
+    int num;
+    sscanf(size, "%d", &num);
 
     char buffer[num];
     read(fd1[0], buffer, num);
@@ -58,14 +66,18 @@ int main(int argc, char **argv) {
     pipe(output);
     
     int id = fork();
-    if(id == 0) {
+    if (id == 0) {
         first_read(input, argv[1]);
     } else {
         id = fork();
-        if(id == 0) {
-            second_process(input, output, input_size);
-        } else {
-            third_write(output, argv[2]);
+        if (id == 0) {
+            second_process(input, output);
+        }
+        else {
+            id = fork();
+            if (id == 0) {
+                third_write(output, argv[2]);
+            }
         }
     }
     return 0;

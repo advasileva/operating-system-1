@@ -2,7 +2,7 @@
 
 for i in `seq 4 $1`
 do
-    echo "Program $i"
+    echo "Program for $i points"
     for j in `seq 1 $2`
     do
         echo "Test $j"
