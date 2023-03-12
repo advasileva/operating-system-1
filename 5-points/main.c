@@ -9,29 +9,37 @@
 int input_size = 5000;
 int output_size = 3;
 
-void first_read(int fd[2], char* file) {
+void first_read(char* name, char* file) {
     printf("First PID: %d\n", getpid());
 
     char buffer[input_size];
     int input = open(file, O_RDONLY);
     int num = read(input, buffer, input_size);
 
+    int fd;
+    mknod(name, S_IFIFO | 0666, 0);
+    fd = open(name, O_WRONLY);
+
     char size[10];
     sprintf(size, "%d", num);
-    write(fd[1], size, 10);
-    write(fd[1], buffer, num);
+    write(fd, size, 10);
+    write(fd, buffer, num);
 }
 
-void second_process(int fd1[2], int fd2[2]) {
+void second_process(char* name1, char* name2) {
     printf("Second PID: %d\n", getpid());
 
+    int fd1;
+    mknod(name1, S_IFIFO | 0666, 0);
+    fd1 = open(name1, O_RDONLY);
+
     char size[10];
-    read(fd1[0], size, 10);
+    read(fd1, size, 10);
     int num;
     sscanf(size, "%d", &num);
 
     char buffer[num];
-    read(fd1[0], buffer, num);
+    read(fd1, buffer, num);
 
     char min = buffer[0], max = buffer[0];
     for (size_t i = 1; i < num; i++)
@@ -44,26 +52,32 @@ void second_process(int fd1[2], int fd2[2]) {
         }
     }
 
+    int fd2;
+    mknod(name2, S_IFIFO | 0666, 0);
+    fd2 = open(name2, O_WRONLY);
+
     buffer[0] = min;
     buffer[1] = '\n';
     buffer[2] = max;
-    write(fd2[1], buffer, output_size);
+    write(fd2, buffer, output_size);
 }
 
-void third_write(int fd[2], char* file) {
+void third_write(char* name, char* file) {
     printf("Third PID: %d\n", getpid());
 
+    int fd;
+    mknod(name, S_IFIFO | 0666, 0);
+    fd = open(name, O_RDONLY);
+
     char buffer[output_size];
-    read(fd[0], buffer, output_size);
+    read(fd, buffer, output_size);
 
     int output = open(file, O_WRONLY | O_CREAT);
     write(output, buffer, output_size);
 }
 
 int main(int argc, char **argv) {
-    int input[2], output[2];
-    pipe(input);
-    pipe(output);
+    char* input = "input", *output = "output";
     
     int id = fork();
     if (id == 0) {
