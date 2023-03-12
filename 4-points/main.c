@@ -10,7 +10,7 @@ int input_size = 5000;
 int output_size = 3;
 
 void first_read(int fd[2], char* file) {
-    printf("First PID: %d\n", getpid());
+    printf("Reader PID: %d\n", getpid());
 
     char buffer[input_size];
     int input = open(file, O_RDONLY);
@@ -23,7 +23,7 @@ void first_read(int fd[2], char* file) {
 }
 
 void second_process(int fd1[2], int fd2[2]) {
-    printf("Second PID: %d\n", getpid());
+    printf("Processor PID: %d\n", getpid());
 
     char size[10];
     read(fd1[0], size, 10);
@@ -51,7 +51,7 @@ void second_process(int fd1[2], int fd2[2]) {
 }
 
 void third_write(int fd[2], char* file) {
-    printf("Third PID: %d\n", getpid());
+    printf("Writer PID: %d\n", getpid());
 
     char buffer[output_size];
     read(fd[0], buffer, output_size);

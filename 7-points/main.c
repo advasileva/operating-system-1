@@ -62,7 +62,7 @@ void second_process(char* name1, char* name2) {
     write(fd2, buffer, output_size);
 }
 
-void third_write(char* name, char* file) {
+void first_write(char* name, char* file) {
     printf("Writer PID: %d\n", getpid());
 
     int fd;
@@ -82,16 +82,11 @@ int main(int argc, char **argv) {
     int id = fork();
     if (id == 0) {
         first_read(input, argv[1]);
+        first_write(output, argv[2]);
     } else {
         id = fork();
         if (id == 0) {
             second_process(input, output);
-        }
-        else {
-            id = fork();
-            if (id == 0) {
-                third_write(output, argv[2]);
-            }
         }
     }
     return 0;
