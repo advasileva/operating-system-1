@@ -13,4 +13,4 @@ run:
 	./scripts/run.sh ${points} ${tests}
 
 clear:
-	./scripts/clear.sh ${points} ${tests}
+	./scripts/clear.sh 9 ${tests}
