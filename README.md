@@ -76,25 +76,33 @@
     ```bash
     Program for 4 points
     Test 1
-    Reader PID: 57243
-    Processor PID: 57244
-    Writer PID: 57245
+    Reader PID: 74426
+    Processor PID: 74427
+    Writer PID: 74428
     Test 2
-    Reader PID: 57249
-    Processor PID: 57250
-    Writer PID: 57251
+    Reader PID: 74432
+    Processor PID: 74433
+    Writer PID: 74434
     Test 3
-    Reader PID: 57255
-    Processor PID: 57256
-    Writer PID: 57257
+    Reader PID: 74438
+    Processor PID: 74439
+    Writer PID: 74440
     Test 4
-    Reader PID: 57261
-    Processor PID: 57262
-    Writer PID: 57263
+    Reader PID: 74444
+    Processor PID: 74445
+    Writer PID: 74446
     Test 5
-    Reader PID: 57267
-    Processor PID: 57268
-    Writer PID: 57269
+    Reader PID: 74450
+    Processor PID: 74451
+    Writer PID: 74452
+    Test 6
+    Reader PID: 74456
+    Processor PID: 74457
+    Writer PID: 74458
+    Test 7
+    Reader PID: 74462
+    Processor PID: 74463
+    Writer PID: 74464
     ```
 
 ### 5 баллов
@@ -159,25 +167,33 @@
     ```bash
     Program for 5 points
     Test 1
-    Reader PID: 57477
-    Processor PID: 57478
-    Writer PID: 57479
+    Reader PID: 74469
+    Processor PID: 74470
+    Writer PID: 74471
     Test 2
-    Reader PID: 57483
-    Processor PID: 57484
-    Writer PID: 57485
+    Reader PID: 74475
+    Processor PID: 74476
+    Writer PID: 74477
     Test 3
-    Reader PID: 57489
-    Processor PID: 57490
-    Writer PID: 57491
+    Reader PID: 74481
+    Processor PID: 74482
+    Writer PID: 74483
     Test 4
-    Reader PID: 57495
-    Processor PID: 57496
-    Writer PID: 57497
+    Reader PID: 74487
+    Processor PID: 74488
+    Writer PID: 74489
     Test 5
-    Reader PID: 57501
-    Processor PID: 57502
-    Writer PID: 57503
+    Reader PID: 74493
+    Processor PID: 74494
+    Writer PID: 74495
+    Test 6
+    Reader PID: 74499
+    Processor PID: 74500
+    Writer PID: 74501
+    Test 7
+    Reader PID: 74505
+    Processor PID: 74506
+    Writer PID: 74507
     ```
 
 ### 6 баллов
@@ -225,25 +241,33 @@
     ```bash
     Program for 6 points
     Test 1
-    Reader PID: 57508
-    Writer PID: 57508
-    Processor PID: 57509
+    Reader PID: 74514
+    Writer PID: 74514
+    Processor PID: 74515
     Test 2
-    Reader PID: 57513
-    Writer PID: 57513
-    Processor PID: 57514
+    Reader PID: 74519
+    Writer PID: 74519
+    Processor PID: 74520
     Test 3
-    Reader PID: 57518
-    Writer PID: 57518
-    Processor PID: 57519
+    Reader PID: 74524
+    Writer PID: 74524
+    Processor PID: 74525
     Test 4
-    Reader PID: 57523
-    Writer PID: 57523
-    Processor PID: 57524
+    Reader PID: 74529
+    Writer PID: 74529
+    Processor PID: 74530
     Test 5
-    Reader PID: 57528
-    Writer PID: 57528
-    Processor PID: 57529
+    Reader PID: 74534
+    Writer PID: 74534
+    Processor PID: 74535
+    Test 6
+    Reader PID: 74539
+    Writer PID: 74539
+    Processor PID: 74540
+    Test 7
+    Reader PID: 74544
+    Writer PID: 74544
+    Processor PID: 74545
     ```
 
 ### 7 баллов
@@ -307,25 +331,33 @@
     ```bash
     Program for 7 points
     Test 1
-    Reader PID: 57534
-    Processor PID: 57535
-    Writer PID: 57534
+    Reader PID: 74562
+    Processor PID: 74563
+    Writer PID: 74562
     Test 2
-    Reader PID: 57539
-    Processor PID: 57540
-    Writer PID: 57539
+    Reader PID: 74567
+    Processor PID: 74568
+    Writer PID: 74567
     Test 3
-    Reader PID: 57544
-    Processor PID: 57545
-    Writer PID: 57544
+    Reader PID: 74572
+    Processor PID: 74573
+    Writer PID: 74572
     Test 4
-    Reader PID: 57549
-    Processor PID: 57550
-    Writer PID: 57549
+    Reader PID: 74577
+    Processor PID: 74578
+    Writer PID: 74577
     Test 5
-    Reader PID: 57554
-    Processor PID: 57555
-    Writer PID: 57554
+    Reader PID: 74582
+    Processor PID: 74583
+    Writer PID: 74582
+    Test 6
+    Reader PID: 74587
+    Processor PID: 74588
+    Writer PID: 74587
+    Test 7
+    Reader PID: 74592
+    Processor PID: 74593
+    Writer PID: 74592
     ```
 
 ### 8 баллов
@@ -391,33 +423,33 @@
     ```bash
     Program for 8 points
     Test 1
-    Reader PID: 59927
-    Processor PID: 59928
-    Writer PID: 59927
+    Reader PID: 74598
+    Processor PID: 74599
+    Writer PID: 74598
     Test 2
-    Processor PID: 59932
-    Reader PID: 59931
-    Writer PID: 59931
+    Processor PID: 74603
+    Reader PID: 74602
+    Writer PID: 74602
     Test 3
-    Reader PID: 59935
-    Processor PID: 59936
-    Writer PID: 59935
+    Reader PID: 74606
+    Processor PID: 74607
+    Writer PID: 74606
     Test 4
-    Reader PID: 59939
-    Processor PID: 59940
-    Writer PID: 59939
+    Processor PID: 74611
+    Reader PID: 74610
+    Writer PID: 74610
     Test 5
-    Reader PID: 59943
-    Processor PID: 59944
-    Writer PID: 59943
+    Reader PID: 74614
+    Processor PID: 74615
+    Writer PID: 74614
     Test 6
-    Processor PID: 59948
-    Reader PID: 59947
-    Writer PID: 59947
+    Processor PID: 74619
+    Reader PID: 74618
+    Writer PID: 74618
     Test 7
-    Reader PID: 59951
-    Processor PID: 59952
-    Writer PID: 59951
+    Reader PID: 74622
+    Processor PID: 74623
+    Writer PID: 74622
     ```
 
 ### 9 баллов
@@ -479,7 +511,35 @@
 
     Пример работы:
     ```bash
-    
+    Program for 9 points
+    Test 1
+    Reader PID: 74627
+    Processor PID: 74628
+    Writer PID: 74627
+    Test 2
+    Reader PID: 74631
+    Processor PID: 74632
+    Writer PID: 74631
+    Test 3
+    Reader PID: 74635
+    Processor PID: 74636
+    Writer PID: 74635
+    Test 4
+    Processor PID: 74640
+    Reader PID: 74639
+    Writer PID: 74639
+    Test 5
+    Reader PID: 74643
+    Processor PID: 74644
+    Writer PID: 74643
+    Test 6
+    Reader PID: 74647
+    Processor PID: 74648
+    Writer PID: 74647
+    Test 7
+    Reader PID: 74651
+    Processor PID: 74652
+    Writer PID: 74651
     ```
 
 ## Как запустить
