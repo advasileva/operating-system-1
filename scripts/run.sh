@@ -12,4 +12,13 @@ do
     done
     echo
 done
+echo "Program for 8 points"
+for j in `seq 1 $2`
+do
+    echo "Test $j"
+    ./8-points/first.exe tests/test$j.in 8-points/test$j.out & ./8-points/second.exe
+    chmod -R +xr 8-points/test$j.out
+    diff tests/test$j.out $i-points/test$j.out
+done
+echo
 echo "Programs finished"
