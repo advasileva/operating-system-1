@@ -1,5 +1,5 @@
 points = 7
-tests = 5
+tests = 7
 
 chmod:
 	chmod -R +xr .
@@ -8,6 +8,7 @@ compile:
 	./scripts/compile.sh ${points}
 
 run:
+	make chmod
 	make clear
 	./scripts/run.sh ${points} ${tests}
 
